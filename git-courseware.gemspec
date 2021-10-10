@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "gitcourseware"
-  spec.version       = "0.1.0"
+  spec.name          = "git-courseware"
+  spec.version       = "0.8.0"
   spec.authors       = ["Mark Samberg"]
   spec.email         = ["mark@sambergs.com"]
 
