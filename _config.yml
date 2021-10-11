@@ -50,12 +50,12 @@ nav_showcourses: 1 #Show all courses in the nav bar.
 
 # A list of the pages to display in the navigation bar
 header_pages:
-  - title: Wolfware
-	url: https://wolfware.ncsu.edu
-	absolute: true
-  - title: Home
-	url: /
-	
+  - title: "Wolfware"
+    url: "https://wolfware.ncsu.edu"
+    absolute: true
+  - title: "Home"
+    url: "/"
+
 footer_pages: 
   # - title: Home
   #   url: /
