@@ -1,0 +1,79 @@
+<div class="container">
+	  <div class="site-title">
+		  <h1>
+			{%- if {{site.data.courses[page.course]}} -%}
+			  {{site.data.courses[page.course].title}}
+			{%- else -%}
+			  {{ site.title | escape }}
+			{%- endif -%}
+		  </h1>
+		  {%- if site.unit_name -%}
+			  <h2 class="parent-unit">
+				  <a href="{{ site.unit_url }}" target="_blank">{{ site.unit_name | escape }}</a>
+			  </h2>
+		  {%- endif -%}
+	  </div>
+	</div>
+	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	  <div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav">
+			{%- for pages in site.header_pages -%}
+			  {% if pages.subpages %}
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ pages.title | escape }}</a>
+				  <div class="dropdown-menu">
+					{%- for subpages in pages.subpages -%}
+					  {% if subpages.absolute %}
+						<a class="dropdown-item" href="{{ subpages.url | absolute_url }}">{{ subpages.title | escape }}</a>
+					  {% else %}
+						<a class="dropdown-item" href="{{ subpages.url | relative_url }}">{{ subpages.title | escape }}</a>
+					  {% endif %}
+					{%- endfor -%}
+				  </div>
+				</li>
+			  {% else %}
+				<li class="nav-item">
+				  {% if pages.absolute %}
+					<a class="nav-link" href="{{ pages.url | absolute_url }}">{{ pages.title | escape }}</a>
+				  {% else %}
+					<a class="nav-link" href="{{ pages.url | relative_url }}">{{ pages.title | escape }}</a>
+				  {% endif %} 
+				</li>
+			  {% endif %}
+			{%- endfor -%}
+			{% if site.nav_showcourses == 1 %}
+			  {% for course in site.data.courses %}
+				<li class="nav-item dropdown">
+				  {% assign element = course[0] %}
+				  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ site.data.courses[element].shorttitle | escape}}</a>
+				  <div class="dropdown-menu">
+					<a href="{{ site.data.courses[element].homepage | relative_url }} " class="dropdown-item">Course Home</a>
+					{% for unit in site.data.courses[element].units %}
+						{% assign uid = unit[0] %}
+						<a href="{{ site.data.courses[element].units[uid].home | relative_url }} " class="dropdown-item">{{ site.data.courses[element].units[uid].title | escape }}</a>
+					{% endfor %}
+				  </div>
+				</li>
+			  {% endfor %}
+			{% else %}
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Courses</a>
+				<div class="dropdown-menu">
+				  {% for course in site.data.courses %}
+					{% assign element = course[0] %}
+					<a href="{{ site.data.courses[element].homepage | relative_url }} " class="dropdown-item">{{ site.data.courses[element].title | escape }}</a>
+				  {% endfor %}
+				</div>
+			  </li>
+			{% endif %} 
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	

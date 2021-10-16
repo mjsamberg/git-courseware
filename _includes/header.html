@@ -1,0 +1,5 @@
+{%- if site.style -%}
+  {% include style/{{site.style}}/header.html %}}
+{%- else -%}
+	{% include style/generic/header.html %}
+{%- endif -%}

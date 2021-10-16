@@ -1,2 +1,5 @@
-<footer class="footer mt-auto py-3 bg-light h-card">
-</footer>
+{%- if site.style -%}
+  {% include style/{{site.style}}/footer.html %}}
+{%- else -%}
+	{% include style/generic/footer.html %}
+{%- endif -%}

@@ -216,6 +216,31 @@ $brand-colors: map-merge((
   "orange":   $brand-orange,
 ), $brand-colors);
 
+$primary: $brand-red;
+$secondary: $brand-reynolds;
+
+$theme-colors: (
+  "primary":    $brand-red,
+  "secondary":  $brand-reynolds,
+  "success":    $brand-green,
+  "info":       $brand-blue,
+  "warning":    $brand-orange,
+  "danger":     $brand-reynolds,
+  "light":      $light,
+  "dark":       $dark,
+  "gray":       $gray-600,
+  "blue":       $brand-blue,
+  "indigo":     $brand-indigo,
+  "purple":     $brand-indigo,
+  "red":        $brand-red,
+  "orange":     $brand-orange,
+  "yellow":     $brand-yellow,
+  "green":      $brand-green,
+  "teal":       $brand-aqua,
+  "cyan":       $brand-indigo
+);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 115 !default;
 
@@ -227,7 +252,8 @@ $enable-rounded: false;
 
 
 // Links
-
+$link-color:                $primary;
+$link-hover-color:          $brand-reynolds;
 $link-decoration:           underline;
 $link-hover-decoration:     none;
 
@@ -268,28 +294,6 @@ $alert-color-level:  12;
 
 $code-color: $black;
 
-
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark,
-  "gray":       $gray-600,
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan
-);
-
 $container-max-widths: (
   sm: 540px,
   md: 720px,
@@ -303,3 +307,28 @@ $line-height-base: 1.5;
 $font-family-serif: GlyphaRoman, serif;
 
 $headings-font-family: UniversCondensed, Arial, sans-serif;
+
+
+.footer-address span{
+  display: block;
+}
+
+#footer-unit-name{
+  font-family: $headings-font-family;
+  font-size: 1.5rem;
+  font-wight: 400;
+}
+
+footer .college-logo{
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+.college-logo-university{
+  font-family: $font-family-sans-serif;
+  font-weight: bolder;
+}
+
+.college-logo-college{
+  font-family: $headings-font-family;
+}

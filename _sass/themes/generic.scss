@@ -20,6 +20,7 @@ $theme-colors: (
   "teal":       $teal,
   "cyan":       $cyan
 );
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 $font-family-sans-serif: 'Roboto', sans-serif;
 $font-family-serif:'Roboto Slab', serif;
