@@ -1,12 +1,14 @@
+---
+---
+
 @import "bootstrap/bootstrap-utilities";
 @import "custom-variables";
-@import "bootstrap/bootstrap";
-
-{%- if site.style -%}
-  @import "themes/{{site.style}}";
-{%- else -%}
+{% if site.style %}
+  @import "themes/{{ site.style }}";
+{% else %}
   @import "themes/generic";
-{%- endif -%}
+{% endif %}
 
-
+@import "bootstrap/bootstrap";
+@import "gitcourseware";
 @import "custom-styles";
