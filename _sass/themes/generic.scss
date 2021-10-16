@@ -1,6 +1,4 @@
----
----
-@import "bootstrap/bootstrap-utilities";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@300&family=Roboto:wght@300&display=swap');
 
 $theme-colors: (
   "primary":    $primary,
@@ -23,12 +21,12 @@ $theme-colors: (
   "cyan":       $cyan
 );
 
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-serif:'Roboto Slab', serif;
+$headings-font-family: 'Roboto Condensed', sans-serif;
+
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px
 );
-
-@import "custom-variables";
-@import "bootstrap/bootstrap";
-@import "custom-styles";

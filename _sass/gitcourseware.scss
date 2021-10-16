@@ -1,0 +1,91 @@
+.site-title {
+	text-align: center;
+	margin-top: 2.25em;
+	margin-bottom: 2.25em;
+}
+
+.site-title h1 {
+	color: $black;
+	margin-bottom: 0;
+	font-size: 2.5rem;
+	font-family: $font-family-sans-serif;
+}
+
+.site-title .parent-unit a{
+	color: $primary;
+	text-decoration: none;
+	font-size: 2.0rem;
+}
+
+.site-title .parent-unit a:hover{
+	color: $primary;
+	text-decoration: underline;
+}
+
+hr.header-hr {
+	border-top: 5px solid $primary;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+	font-family: $font-family-sans-serif;
+	color: $white;
+}
+
+footer{
+	margin-top: 1rem;
+	background-color:$primary;
+	color:$white;
+}
+
+footer .main-footer{
+	padding: 1rem;
+}
+
+footer a{
+	color: $white;
+	text-decoration: none;
+}
+
+footer a:hover{
+	color: $white;
+	text-decoration: underline;
+}
+
+.footer-address span{
+	display: block;
+}
+
+#footer-unit-name{
+	font-family: $headings-font-family;
+	font-size: 1.5rem;
+	font-wight: 400;
+}
+
+footer .college-logo{
+	text-transform: uppercase;
+	font-size: 1.25rem;
+}
+
+.college-logo-university{
+	font-family: $font-family-sans-serif;
+	font-weight: bolder;
+}
+
+.college-logo-college{
+	font-family: $headings-font-family;
+}
+
+footer .social{
+	font-size: 1.25rem;
+}
+
+blockquote{
+	font-family: $font-family-serif;
+	margin-left: 2rem;
+	padding-left: 1rem;
+	border-left: 3px solid $gray-300; 
+}
+
+.nav-list-home{
+	border-top: 1px solid $gray-600 !important;
+}

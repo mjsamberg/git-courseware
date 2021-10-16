@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 url: https://mjsamberg.github.io/git-courseware
 title: Courses
+style: ncstate
 
 # NC State-specific items for the NCSU branding bar
 ncstate_brand_search_code: 018149703590495268473:u8ozjjclv58
