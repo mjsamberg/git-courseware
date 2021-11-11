@@ -17,25 +17,24 @@
 	
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 	  <div class="container">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-		  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		  <span class="navbar-toggler-icon"></span>
+		<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<div class="collapse navbar-collapse" id="navbar">
 		  <ul class="navbar-nav">
 			{%- for pages in site.header_pages -%}
 			  {% if pages.subpages %}
 				<li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ pages.title | escape }}</a>
-				  <div class="dropdown-menu">
+				  <a class="nav-link dropdown-toggle" href="#" id="nav-page-{{ forloop.index }}"  role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ pages.title | escape }}</a>
+				  <ul class="dropdown-menu" aria-labelledby="nav-page-{{ forloop.index }}">
 					{%- for subpages in pages.subpages -%}
 					  {% if subpages.absolute %}
-						<a class="dropdown-item" href="{{ subpages.url | absolute_url }}">{{ subpages.title | escape }}</a>
+						<li><a class="dropdown-item" href="{{ subpages.url | absolute_url }}">{{ subpages.title | escape }}</a></li>
 					  {% else %}
-						<a class="dropdown-item" href="{{ subpages.url | relative_url }}">{{ subpages.title | escape }}</a>
+						<li><a class="dropdown-item" href="{{ subpages.url | relative_url }}">{{ subpages.title | escape }}</a></li>
 					  {% endif %}
 					{%- endfor -%}
-				  </div>
+				  </ul>
 				</li>
 			  {% else %}
 				<li class="nav-item">
@@ -51,25 +50,25 @@
 			  {% for course in site.data.courses %}
 				<li class="nav-item dropdown">
 				  {% assign element = course[0] %}
-				  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ site.data.courses[element].shorttitle | escape}}</a>
-				  <div class="dropdown-menu">
-					<a href="{{ site.data.courses[element].homepage | relative_url }} " class="dropdown-item">Course Home</a>
+				  <a  class="nav-link dropdown-toggle" href="#" id="nav-course-{{ forloop.index }}"  role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ site.data.courses[element].shorttitle | escape}}</a>
+				  <ul class="dropdown-menu" aria-labelledby="nav-course-{{ forloop.index }}">
+					<li><a href="{{ site.data.courses[element].homepage | relative_url }}" class="dropdown-item">Course Home</a></li>
 					{% for unit in site.data.courses[element].units %}
 						{% assign uid = unit[0] %}
-						<a href="{{ site.data.courses[element].units[uid].home | relative_url }} " class="dropdown-item">{{ site.data.courses[element].units[uid].title | escape }}</a>
+						<li><a href="{{ site.data.courses[element].units[uid].home | relative_url }}" class="dropdown-item">{{ site.data.courses[element].units[uid].title | escape }}</a></li>
 					{% endfor %}
-				  </div>
+				  </ul>
 				</li>
 			  {% endfor %}
 			{% else %}
 			  <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Courses</a>
-				<div class="dropdown-menu">
+				<a class="nav-link dropdown-toggle" href="#" id="nav-courselist"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+				<ul class="dropdown-menu" aria-labelledby="nav-courselist">
 				  {% for course in site.data.courses %}
 					{% assign element = course[0] %}
-					<a href="{{ site.data.courses[element].homepage | relative_url }} " class="dropdown-item">{{ site.data.courses[element].title | escape }}</a>
+					<li><a href="{{ site.data.courses[element].homepage | relative_url }} " class="dropdown-item">{{ site.data.courses[element].title | escape }}</a></li>
 				  {% endfor %}
-				</div>
+				</ul>
 			  </li>
 			{% endif %} 
 		  </ul>
