@@ -69,3 +69,8 @@ blockquote{
 .dropdown-item.active, .dropdown-item:active{
   background-color: $primary;
 }
+
+.list-group-item.active{
+	background-color: $primary;
+	border-color: $primary;
+}
