@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+{% if site.data.courses[page.course].alert %}
+<div class="container">
+  <div class="alert alert-{{site.data.courses[page.course].alert.type}}" role="alert">
+    {{site.data.courses[page.course].alert.message}}
+  </div>
+</div>
+{% endif %}
 <div class="container">
     <main>
       {{ content }}

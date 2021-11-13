@@ -1,10 +1,19 @@
 ---
 layout: default
 ---
+  {% if site.data.courses[page.course].alert %}
+    <div class="container">
+      <div class="alert alert-{{site.data.courses[page.course].alert.type}}" role="alert">
+        {{site.data.courses[page.course].alert.message}}
+      </div>
+    </div>
+  {% endif %}
+
   <header class="container-fluid page-title">
     <h1>{{ page.title | escape }}</h1>
     <hr/>
   </header>
+  
   {% if site.data.courses[page.course].units[page.unit].pages %}
     <div class="container-fluid">
       <div class="row">
