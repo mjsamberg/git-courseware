@@ -53,10 +53,11 @@
 				  {% assign element = course[0] %}
 				  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ site.data.courses[element].shorttitle | escape}}</a>
 				  <div class="dropdown-menu">
-					<a href="{{ site.data.courses[element].homepage | relative_url }} " class="dropdown-item">Course Home</a>
+					<a href="{{ '/courses/' | append: element | append: '/' | append: site.data.courses[element].homepage | append: '.html'  | relative_url }} " class="dropdown-item">Course Home</a>
 					{% for unit in site.data.courses[element].units %}
 						{% assign uid = unit[0] %}
-						<a href="{{ site.data.courses[element].units[uid].home | relative_url }} " class="dropdown-item">{{ site.data.courses[element].units[uid].title | escape }}</a>
+						{% assign url = '/courses/' | append: element | append: '/' | append: site.data.courses[element].units[uid].home | append: '.html' %}
+						<a href="{{ url | relative_url }} " class="dropdown-item">{{ site.data.courses[element].units[uid].title | escape }}</a>
 					{% endfor %}
 				  </div>
 				</li>

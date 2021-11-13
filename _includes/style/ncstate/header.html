@@ -52,10 +52,11 @@
 				  {% assign element = course[0] %}
 				  <a  class="nav-link dropdown-toggle" href="#" id="nav-course-{{ forloop.index }}"  role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ site.data.courses[element].shorttitle | escape}}</a>
 				  <ul class="dropdown-menu" aria-labelledby="nav-course-{{ forloop.index }}">
-					<li><a href="{{ site.data.courses[element].homepage | relative_url }}" class="dropdown-item">Course Home</a></li>
+					<li><a href="{{ '/courses/' | append: element | append: '/' | append: site.data.courses[element].homepage | append: '.html'  | relative_url }}" class="dropdown-item">Course Home</a></li>
 					{% for unit in site.data.courses[element].units %}
 						{% assign uid = unit[0] %}
-						<li><a href="{{ site.data.courses[element].units[uid].home | relative_url }}" class="dropdown-item">{{ site.data.courses[element].units[uid].title | escape }}</a></li>
+						{% assign url = '/courses/' | append: element | append: '/' | append: site.data.courses[element].units[uid].home | append: '.html' %}
+						<li><a href="{{ url | relative_url }}" class="dropdown-item">{{ site.data.courses[element].units[uid].title | escape }}</a></li>
 					{% endfor %}
 				  </ul>
 				</li>
@@ -66,7 +67,7 @@
 				<ul class="dropdown-menu" aria-labelledby="nav-courselist">
 				  {% for course in site.data.courses %}
 					{% assign element = course[0] %}
-					<li><a href="{{ site.data.courses[element].homepage | relative_url }} " class="dropdown-item">{{ site.data.courses[element].title | escape }}</a></li>
+					<li><a href="{{ '/courses/' | append: element | append: '/' | append: site.data.courses[element].homepage | append: '.html'  | relative_url }} " class="dropdown-item">{{ site.data.courses[element].title | escape }}</a></li>
 				  {% endfor %}
 				</ul>
 			  </li>
