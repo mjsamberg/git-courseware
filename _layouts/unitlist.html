@@ -12,6 +12,30 @@ layout: default
     <main>
       {{ content }}
     </main>
+    {% for category in site.categories %}
+      {% assign catname = category | first %}
+      {% if catname == page.course %}
+        {% if site.data.courses[page.course].announcements_title %}
+          <h2 class="mt-5">{{ site.data.courses[page.course].announcements_title }}</h2>
+        {% else %}
+          <h2 class="mt-5">Announcements</h2>
+        {% endif %}
+        <div class="list-group">
+          {% for post in category.last %}
+            {% if forloop.index >=5 %}
+              {% break %}
+            {% endif %}
+            <a href="{{ post.url }}" class="list-group-item list-group-item-action" aria-current="true">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ post.title }}</h5>
+              </div>
+              <p class="mb-1">{{ post.excerpt }}</p>
+              <small>{{ post.date  | date: '%B %d, %Y'}}</small>
+            </a>
+          {% endfor %}
+      {% endif %}
+    {% endfor %}
+  
     <h2 class="mt-5">Select Unit</h2>
     <nav class="list-group" aria-label="Unit Navigation">
         {% for unit in site.data.courses[page.course].units %}

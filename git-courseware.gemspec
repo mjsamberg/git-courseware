@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "git-courseware"
-  spec.version       = "0.69.0"
+  spec.version       = "0.70.0"
   spec.authors       = ["Mark Samberg"]
   spec.email         = ["mark@sambergs.com"]
 

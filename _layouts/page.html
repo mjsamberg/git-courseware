@@ -50,7 +50,7 @@ layout: default
         {% if page.url == url %}
           {% if site.data.courses[page.course].units[page.unit].pages[prev_i] and forloop.index0>0 %}
             <li class="page-item">
-              <a class="page-link" href="{{'/courses/' | append: page.course | append: '/' | append: site.data.courses[page.course].units[page.unit].pages[prev_i].url | append: '.html' | relative_url}}"><i class="bi bi-chevron-left">&nbsp;</i>Previous</i></a>
+              <a class="page-link" href="{{'/courses/' | append: page.course | append: '/' | append: site.data.courses[page.course].units[page.unit].pages[prev_i].url | append: '.html' | relative_url}}"><i class="bi bi-chevron-left">&nbsp;</i>Previous</a>
             </li>
           {% endif %}
           {% if site.data.courses[page.course].units[page.unit].pages[next_i] and next_i!=0 %}

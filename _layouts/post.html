@@ -20,5 +20,52 @@ layout: default
   <main class="container">
     {{ content }}
   </main>
+  
+  
+  {% if page.course %}
+    {% assign cat = page.course %}
+    {% for post in site.categories[cat] %}
+      {% if post.url == page.url %}
+        {% assign post_index0 = forloop.index0 %}
+        {% assign post_index1 = forloop.index %}
+      {% endif %}
+    {% endfor %}
+    
+    {% for post in site.categories[cat] %}
+      {% if post_index0 == forloop.index %}
+        {% assign next_post = post %}
+      {% endif %}
+      {% if post_index1 == forloop.index0 %}
+        {% assign prev_post = post %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% assign prev_post = page.previous %}
+    {% assign next_post = page.next %}
+  {% endif %}
+    
+  <nav class="container mt-5" aria-label="Previous/Next Navigation">
+    <ul class="pagination pagination-lg course-pagination justify-content-center">
+      {% if prev_post %}
+        <li class="page-item">
+          <a class="page-link" href="{{prev_post.url}}"><i class="bi bi-chevron-left">&nbsp;</i>Previous</a>
+        </li>
+      {% endif %}
+      
+      <li class="page-item ms-auto">
+        {%- if page.course -%}
+          <a class="page-link" href="{{ '/courses/' | append: page.course | append: '/' | append: site.data.courses[page.course].homepage | append: '.html' | relative_url }}"">Course Home</a>
+        {%- endif -%}
+      </li>
+            
+      <li class="page-item ms-auto">
+        {% if next_post %}
+          <a class="page-link" href="{{next_post.url}}">Next <i class="bi bi-chevron-right">&nbsp;</i></a>
+        {% endif %}
+      </li>
+    
+      
+    </ul>
+  </nav>
 
 </article>
