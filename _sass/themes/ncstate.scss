@@ -308,6 +308,10 @@ $font-family-serif: GlyphaRoman, serif;
 
 $headings-font-family: UniversCondensed, Arial, sans-serif;
 
+figcaption{
+  font-family: $font-family-serif;
+}
+
 ul{
   list-style-type: square;
 }
