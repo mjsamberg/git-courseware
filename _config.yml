@@ -38,7 +38,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 #URL For this repository
 repository_url: https://github.com/mjsamberg/courses
-theme: git-courseware
+#theme: git-courseware
 
 # Build settings
 plugins:
