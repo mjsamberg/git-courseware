@@ -48,7 +48,7 @@ layout: default
     <ul class="pagination pagination-lg course-pagination justify-content-center">
       {% if prev_post %}
         <li class="page-item">
-          <a class="page-link" href="{{prev_post.url}}"><i class="bi bi-chevron-left">&nbsp;</i>Previous</a>
+          <a class="page-link" href="{{prev_post.url | relative_url}}"><i class="bi bi-chevron-left">&nbsp;</i>Previous</a>
         </li>
       {% endif %}
       
@@ -60,7 +60,7 @@ layout: default
             
       <li class="page-item ms-auto">
         {% if next_post %}
-          <a class="page-link" href="{{next_post.url}}">Next <i class="bi bi-chevron-right">&nbsp;</i></a>
+          <a class="page-link" href="{{next_post.url | relative_url}}">Next <i class="bi bi-chevron-right">&nbsp;</i></a>
         {% endif %}
       </li>
     

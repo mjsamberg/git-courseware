@@ -25,7 +25,7 @@ layout: default
             {% if forloop.index >=5 %}
               {% break %}
             {% endif %}
-            <a href="{{ post.url }}" class="list-group-item list-group-item-action" aria-current="true">
+            <a href="{{ post.url | relative_url }}" class="list-group-item list-group-item-action" aria-current="true">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{ post.title }}</h5>
               </div>
