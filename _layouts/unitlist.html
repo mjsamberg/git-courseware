@@ -37,7 +37,7 @@ layout: default
       {% endif %}
     {% endfor %}
   
-    <h2 class="mt-5">Select Unit</h2>
+    <h2 class="mt-5">Select {% if site.data.courses[page.course].units_title %}{{site.data.courses[page.course].units_title}}{% else %}Unit{%endif%}</h2>
     <nav class="list-group" aria-label="Unit Navigation">
         {% for unit in site.data.courses[page.course].units %}
             {% assign element = unit[0] %}
