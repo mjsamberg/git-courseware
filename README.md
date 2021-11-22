@@ -1,52 +1,25 @@
-# gitcourseware
+# Git Courseware - an Open Source approach to Textbook Publishing
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+Git Courseware is a [Jekyll Theme](https://jekyllrb.com) specifically designed for the creation and publishing of [OER Textbooks](https://www.lib.ncsu.edu/do/open-education). The theme has custom layouts and navigation design to allow course creators to create fully online textbooks with little or no code required while leveraging all of the features of GitHub's collaborative development process and version control.
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
+This project was originally created by [Dr. Mark Samberg](https://go.ncsu.edu/mark) for use in his [online courses](https://mjsamberg.github.io/courses). The project was expanded thanks to support from the [NC State University Alt-Textbook Project](https://www.lib.ncsu.edu/alttextbook).
 
-TODO: Delete this and the text above, and describe your gem
+## Project Features
+This project specifically includes the following features for course developers:
+1. A home page template enabling users to select a course to view
+1. A course homepage with selectable units and in-unit navigation automatically generated
+1. YouTube embedding and included figures with no code required
+1. Support for course announcements and course-level persistent alerts
+1. A themeable design allowing for branding for your institution
 
+## Why not WordPress or an LMS?
+One of the questions often asked of this project is why a course designer would choose to implement it over a WYSIWYG webpage creator like WordPress or Google Sites. Or why a designer would use this instead of including content in their learning management system.
 
-## Installation
+The answer for both is primarily about leveraging GitHub as a tool for open design. In his paper, [Defining the "Open" in Open Content and Open Educational Resources](http://opencontent.org/definition/), David Wiley describes five core principles of "open" content: content that users are able to *retain* (i.e., download and save a copy), content that can be *revised* (a user can adapt and modify the work), content that can be *remixed* (used to create something new), content that *reused* for other purposes, and that all versions of the content can be *redistributed*.
 
-Add this line to your Jekyll site's `Gemfile`:
+While in both a website and an LMS, content can be copied and pasted, it is incredibly difficult to save content from a website or LMS to your computer unless it is in PDF format. Additionally, content in an LMS is restricted and often only available during a time a student is enrolled in a course. Again, because the content must be copied and pasted, it is incredibly difficult to revise or remix. Users also must create a new hosting mechanism to host this content.
 
-```ruby
-gem "gitcourseware"
-```
+Conversely, the setup of Git Courseware and GitHub allows the content to exist publicly on the Internet, for anyone who wants to download a copy of the content to be able to do so and retain it, and to leverage GitHub to host their revisions. In addition, because content is separated from presentation, the content can be remixed in any number of ways by anyone familiar with Markdown syntax. 
 
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: gitcourseware
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install gitcourseware
-
-## Usage
-
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `gitcourseware.gemspec` accordingly.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
+## Sounds good? What happens next?
+Take a look at the template and instruction guide at [https://mjsamberg.github.io/git-courseware-template/](https://mjsamberg.github.io/git-courseware-template/). 
