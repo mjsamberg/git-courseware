@@ -1,4 +1,4 @@
 <figure class="figure d-flex flex-column align-items-center justify-content-center" >
-  <img src="{{'/courses/' | append: page.course | append: '/' | append: include.image}}" class="figure-img img-fluid rounded" {% if include.maxwidth %}style="max-width: {{include.maxwidth}};"{% endif %} alt="{{include.alt}}">
+  <img src="{{'/courses/' | append: page.course | append: '/' | append: include.image | relative_url}}" class="figure-img img-fluid rounded" {% if include.maxwidth %}style="max-width: {{include.maxwidth}};"{% endif %} alt="{{include.alt}}">
   <figcaption class="figure-caption">{{include.caption}}</figcaption>
 </figure>
